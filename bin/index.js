@@ -1,1 +1,177 @@
-!function(e){var t={};function n(r){if(t[r])return t[r].exports;var o=t[r]={i:r,l:!1,exports:{}};return e[r].call(o.exports,o,o.exports,n),o.l=!0,o.exports}n.m=e,n.c=t,n.d=function(e,t,r){n.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:r})},n.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},n.t=function(e,t){if(1&t&&(e=n(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var r=Object.create(null);if(n.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var o in e)n.d(r,o,function(t){return e[t]}.bind(null,o));return r},n.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(t,"a",t),t},n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},n.p="",n(n.s=0)}([function(e,t){var n=function(){return function(e,t){if(Array.isArray(e))return e;if(Symbol.iterator in Object(e))return function(e,t){var n=[],r=!0,o=!1,i=void 0;try{for(var a,u=e[Symbol.iterator]();!(r=(a=u.next()).done)&&(n.push(a.value),!t||n.length!==t);r=!0);}catch(e){o=!0,i=e}finally{try{!r&&u.return&&u.return()}finally{if(o)throw i}}return n}(e,t);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),r=function(){function e(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}return function(t,n,r){return n&&e(t.prototype,n),r&&e(t,r),t}}();function o(e){return function(){var t=e.apply(this,arguments);return new Promise(function(e,n){return function r(o,i){try{var a=t[o](i),u=a.value}catch(e){return void n(e)}if(!a.done)return Promise.resolve(u).then(function(e){r("next",e)},function(e){r("throw",e)});e(u)}("next")})}}var i={};!function(){function e(t){if(function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,e),this.axios=t,!this.axios)throw new Error("缺少axios实例");this.cancelToken=t.CancelToken,this.options={}}r(e,[{key:"use",value:function(e){var t={expire:6e4,storage:!1,storage_expire:36e5,instance:this.axios,requestConfigFn:null,responseConfigFn:null};this.options=Object.assign(t,e),this.init()}},{key:"init",value:function(){var e=this.options;e.storage&&this._storageExpire("expire").then(function(){0===localStorage.length?i={}:a(localStorage,"get")}),this.request(e.requestConfigFn),this.response(e.responseConfigFn)}},{key:"request",value:function(e){var t=this;this.options.instance.interceptors.request.use(function(){var n=o(regeneratorRuntime.mark(function n(r){var o,a,u,c;return regeneratorRuntime.wrap(function(n){for(;;)switch(n.prev=n.next){case 0:if(n.t0=e,!n.t0){n.next=5;break}return n.next=4,e(r);case 4:n.t0=n.sent;case 5:return o=n.t0,(r=o||r).cache&&(a=t.cancelToken.source(),r.cancelToken=a.token,u=i[r.url],c=s(),u&&c-u.expire<t.options.expire&&a.cancel(u)),n.abrupt("return",r);case 9:case"end":return n.stop()}},n,t)}));return function(e){return n.apply(this,arguments)}}())}},{key:"response",value:function(e){var t=this;this.options.instance.interceptors.response.use(function(){var n=o(regeneratorRuntime.mark(function n(r){var o,u;return regeneratorRuntime.wrap(function(n){for(;;)switch(n.prev=n.next){case 0:if(n.t0=e,!n.t0){n.next=5;break}return n.next=4,e(r);case 4:n.t0=n.sent;case 5:return o=n.t0,"get"===(r=o||r).config.method&&r.config.cache&&(u={expire:s(),data:r},i[""+r.config.url]=u,t.options.storage&&a(i)),n.abrupt("return",r);case 9:case"end":return n.stop()}},n,t)}));return function(e){return n.apply(this,arguments)}}(),function(e){return t.axios.isCancel(e)?Promise.resolve(e.message.data):Promise.reject(e)})}},{key:"_storageExpire",value:function(e){var t=this;return new Promise(function(n){var r=function(e){var t=localStorage.getItem(e);return JSON.parse(t)}(e),o=s();r?o-r<t.options.storage_expire||localStorage.clear():u(e,o);n()})}}])}();function a(e){var t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:"set";Object.entries(e).map(function(e){var r=n(e,2),o=r[0],a=r[1];if("set"===t)u(o,a);else{/\{/g.test(a)?i[o]=JSON.parse(a):i[o]=a}})}function u(e,t){localStorage.setItem(e,JSON.stringify(t))}function s(){return(new Date).getTime()}}]);
+"use strict";
+var _slicedToArray = (function() {
+    function a(b, c) {
+      var d = [],
+        e = !0,
+        f = !1,
+        g = void 0;
+      try {
+        for (
+          var j, h = b[Symbol.iterator]();
+          !(e = (j = h.next()).done) &&
+          (d.push(j.value), !(c && d.length === c));
+          e = !0
+        );
+      } catch (k) {
+        (f = !0), (g = k);
+      } finally {
+        try {
+          !e && h["return"] && h["return"]();
+        } finally {
+          if (f) throw g;
+        }
+      }
+      return d;
+    }
+    return function(b, c) {
+      if (Array.isArray(b)) return b;
+      if (Symbol.iterator in Object(b)) return a(b, c);
+      throw new TypeError(
+        "Invalid attempt to destructure non-iterable instance"
+      );
+    };
+  })(),
+  _createClass = (function() {
+    function a(b, c) {
+      for (var e, d = 0; d < c.length; d++)
+        (e = c[d]),
+          (e.enumerable = e.enumerable || !1),
+          (e.configurable = !0),
+          "value" in e && (e.writable = !0),
+          Object.defineProperty(b, e.key, e);
+    }
+    return function(b, c, d) {
+      return c && a(b.prototype, c), d && a(b, d), b;
+    };
+  })();
+Object.defineProperty(exports, "__esModule", { value: !0 });
+function _classCallCheck(a, b) {
+  if (!(a instanceof b))
+    throw new TypeError("Cannot call a class as a function");
+}
+var CACHES = {},
+  Cache = (function() {
+    function a(b) {
+      if ((_classCallCheck(this, a), (this.axios = b), !this.axios))
+        throw new Error("\u7F3A\u5C11axios\u5B9E\u4F8B");
+      (this.cancelToken = b.CancelToken), (this.options = {});
+    }
+    return (
+      _createClass(a, [
+        {
+          key: "use",
+          value: function use(b) {
+            var c = {
+              expire: 6e4,
+              storage: !1,
+              storage_expire: 3.6e6,
+              instance: this.axios,
+              requestConfigFn: null,
+              responseConfigFn: null
+            };
+            (this.options = Object.assign(c, b)), this.init();
+          }
+        },
+        {
+          key: "init",
+          value: function init() {
+            var b = this.options;
+            b.storage &&
+              this._storageExpire("expire").then(function() {
+                0 === localStorage.length
+                  ? (CACHES = {})
+                  : mapStorage(localStorage, "get");
+              }),
+              this.request(b.requestConfigFn),
+              this.response(b.responseConfigFn);
+          }
+        },
+        {
+          key: "request",
+          value: function request(b) {
+            var d = this,
+              c = this.options;
+            c.instance.interceptors.request.use(async function(e) {
+              var f = b && (await b(e));
+              if (((e = f || e), e.cache)) {
+                var g = d.cancelToken.source();
+                e.cancelToken = g.token;
+                var h = CACHES[e.url],
+                  j = getExpireTime();
+                h && j - h.expire < d.options.expire && g.cancel(h);
+              }
+              return e;
+            });
+          }
+        },
+        {
+          key: "response",
+          value: function response(b) {
+            var c = this;
+            this.options.instance.interceptors.response.use(
+              async function(d) {
+                var e = b && (await b(d));
+                if (
+                  ((d = e || d), "get" === d.config.method && d.config.cache)
+                ) {
+                  var f = { expire: getExpireTime(), data: d };
+                  (CACHES["" + d.config.url] = f),
+                    c.options.storage && mapStorage(CACHES);
+                }
+                return d;
+              },
+              function(d) {
+                return c.axios.isCancel(d)
+                  ? Promise.resolve(d.message.data)
+                  : Promise.reject(d);
+              }
+            );
+          }
+        },
+        {
+          key: "_storageExpire",
+          value: function _storageExpire(b) {
+            var c = this;
+            return new Promise(function(d) {
+              var e = getStorage(b),
+                f = getExpireTime();
+              if (e) {
+                var g = f - e < c.options.storage_expire;
+                g || removeStorage();
+              } else setStorage(b, f);
+              d();
+            });
+          }
+        }
+      ]),
+      a
+    );
+  })();
+exports.default = Cache;
+function mapStorage(a) {
+  var b =
+    1 < arguments.length && arguments[1] !== void 0 ? arguments[1] : "set";
+  Object.entries(a).map(function(_ref) {
+    var _ref2 = _slicedToArray(_ref, 2),
+      c = _ref2[0],
+      d = _ref2[1];
+    if ("set" === b) setStorage(c, d);
+    else {
+      var e = /\{/g;
+      CACHES[c] = e.test(d) ? JSON.parse(d) : d;
+    }
+  });
+}
+function removeStorage() {
+  localStorage.clear();
+}
+function setStorage(a, b) {
+  localStorage.setItem(a, JSON.stringify(b));
+}
+function getStorage(a) {
+  var b = localStorage.getItem(a);
+  return JSON.parse(b);
+}
+function getExpireTime() {
+  return new Date().getTime();
+}
