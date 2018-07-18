@@ -20,6 +20,19 @@ npm install axios-request-cache --save
 yarn add axios-request-cache
 ```
 
+## 参数说明
+
+```
+default_options = {
+  expire: 60000,          #缓存过期时间 默认一分钟
+  storage: false,         #是否开启本地缓存 开启后会将缓存存入localstorage
+  storage_expire: 360000  #本地缓存过期时间 过期后会清空所有本地缓存
+  instance: this.axios,   #axios的实例对象 默认指向当前axios
+  requestConfigFn: null,   #请求拦截的操作函数 参数为请求的config对象 返回一个Promise
+  responseConfigFn: null,  #响应拦截的操作函数 参数为响应数据的response对象 返回一个Promise
+}
+```
+
 ## 使用
 
 ```
