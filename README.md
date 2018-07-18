@@ -8,8 +8,16 @@
 
 ## 安装
 
+通过`npm`安装：
+
 ```
 npm install axios-request-cache --save
+```
+
+通过`yarn`安装：
+
+```
+yarn add axios-request-cache
 ```
 
 ## 使用
