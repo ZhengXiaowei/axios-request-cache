@@ -7,6 +7,8 @@
     "lib": "lib"
   },
   "scripts": {
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -24,5 +26,14 @@
   "bugs": {
     "url": "https://github.com/ZhengXiaowei/axios-request-cache/issues"
   },
-  "homepage": "https://github.com/ZhengXiaowei/axios-request-cache#readme"
+  "homepage": "https://github.com/ZhengXiaowei/axios-request-cache#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "webpack": "^4.16.1",
+    "webpack-cli": "^3.0.8"
+  }
 }
