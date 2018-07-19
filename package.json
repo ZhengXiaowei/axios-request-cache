@@ -1,7 +1,7 @@
 {
   "name": "axios-request-cache",
   "version": "1.0.1",
-  "description": "前端接口缓存",
+  "description": "配合axios使用的前端接口数据缓存",
   "main": "index.js",
   "directories": {
     "lib": "lib"
