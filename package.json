@@ -1,5 +1,5 @@
 {
-  "name": "axios-request-caches",
+  "name": "axios-request-cache",
   "version": "1.0.2",
   "description": "配合axios使用的前端接口数据缓存",
   "main": "index.js",
