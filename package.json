@@ -1,7 +1,7 @@
 {
   "name": "axios-request-cache",
-  "version": "1.0.0",
-  "description": "A utils to cache interface with axios in front",
+  "version": "1.0.1",
+  "description": "前端接口缓存",
   "main": "index.js",
   "directories": {
     "lib": "lib"
