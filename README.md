@@ -9,13 +9,13 @@
 通过`npm`安装：
 
 ```
-npm install axios-request-cache --save
+npm install axios-request-caches --save
 ```
 
 通过`yarn`安装：
 
 ```
-yarn add axios-request-cache
+yarn add axios-request-caches
 ```
 
 ## 参数说明
@@ -35,7 +35,7 @@ default_options = {
 
 ```
 import axios from 'axios'
-import Cache from 'axios-request-cache'
+import Cache from 'axios-request-caches'
 
 // axios的自定义实例
 let instance = axios.create({
